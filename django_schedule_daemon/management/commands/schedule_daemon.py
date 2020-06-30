@@ -14,6 +14,7 @@ class Command(BaseCommand):
             try:
                 schedule.run_pending()
             except Exception as e:
+                print('%s: %s' % (type(e),str(e)))
                 logging.error(e, exc_info=True)
             finally:
                 time.sleep(1)

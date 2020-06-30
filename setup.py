@@ -1,16 +1,7 @@
-from setuptools import setup
+import setuptools
 
-setup(
+setuptools.setup(
     name='django-schedule-daemon',
-    version='2020.6.6',
-    install_requires=[
-        'Django',
-        'schedule',
-        'setuptools',
-    ],
-    packages=[
-        'django_schedule_daemon',
-        'django_schedule_daemon.management',
-        'django_schedule_daemon.management.commands',
-    ],
+    install_requires=open('requirements.txt').read().splitlines(),
+    packages=setuptools.find_packages()
 )
